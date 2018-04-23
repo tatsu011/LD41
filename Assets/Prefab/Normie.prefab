@@ -126,6 +126,7 @@ MonoBehaviour:
   DespawnTimer: 0
   Dead: 0
   Speed: 1
+  FishName: Normie
 --- !u!212 &212138440225203874
 SpriteRenderer:
   m_ObjectHideFlags: 1

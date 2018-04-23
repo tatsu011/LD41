@@ -11,6 +11,9 @@ public class FishSpawner : MonoBehaviour {
     public bool GoingRight = false;
     int ActiveTimer;
 
+    public bool FinitePool = false;
+    public int PoolAmount = -1;
+
     private void Start()
     {
         if(Active)
@@ -19,7 +22,11 @@ public class FishSpawner : MonoBehaviour {
 
     private void Update()
     {
-        if(ActiveTimer <=0)
+        if (!Active)
+            return;
+
+
+        if(ActiveTimer <=0 && PoolAmount != 0)
         {
             //theoretically < 0 shouldn't happen, but cover any sneaky sneaks.
             Pool pool = GetComponent<Pool>();
@@ -31,10 +38,12 @@ public class FishSpawner : MonoBehaviour {
             fish.GetComponent<Fish>().WakeUp(FishActiveTimer);
             ActiveTimer = spawnerTimer;
 
+            if (FinitePool)
+                PoolAmount--;
 
         }
 
-
+        
         ActiveTimer--;
     }
 

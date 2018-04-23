@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class BaitColliderEvent : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void TakeDamage(GameObject source)
+    {
+
+    }
 }

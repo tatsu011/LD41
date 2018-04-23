@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
     public int MaxHealth = 3;
     public int CurrentHealth = 3;
 
+    public bool IsInvincible = false;
+    int IVTimer = 30;
+    int IVTime;
+
 
     public Vector2 MaximumSpeed = new Vector2(1.0f, 1.0f);
     public Vector2 ShiftedSpeed = new Vector2(2.0f, 2.0f);
