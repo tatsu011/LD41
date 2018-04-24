@@ -12,6 +12,7 @@ public class Fish : DamageableObject {
     public float Speed = 2.0f;
 
     public string FishName;
+    public int CatchScore = 1000;
 
     bool WasDeadPreviously = false;
 
@@ -43,6 +44,7 @@ public class Fish : DamageableObject {
                 c2d.enabled = false;
                 
             }
+            Debug.Log($"{name} just died.  500 points to gryffindor.");
 
         }
 
@@ -66,7 +68,19 @@ public class Fish : DamageableObject {
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("I hit a player object.");
+            collision.gameObject.SendMessageUpwards("FishContact", gameObject, SendMessageOptions.DontRequireReceiver);
         }
+    }
+
+    protected override void OnDeath()
+    {
+        DespawnTimer += 60;
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y);
+        ScoreObject.AddScore(Score);
+        GetComponent<Rigidbody2D>().simulated = false; //kill the simulation.
+        GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = true;
+        GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5);
     }
 }

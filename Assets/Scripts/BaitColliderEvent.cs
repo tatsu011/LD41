@@ -6,6 +6,8 @@ public class BaitColliderEvent : MonoBehaviour {
 
 	void TakeDamage(GameObject source)
     {
-
+        
     }
+
+
 }

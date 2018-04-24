@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 60123278423142312}
   - component: {fileID: 58040580519869528}
   - component: {fileID: 114520535716281728}
+  - component: {fileID: 50774573507177088}
   m_Layer: 11
   m_Name: SaltyNormie
   m_TagString: Fish
@@ -44,6 +45,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50774573507177088
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1535138984223692}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58040580519869528
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -130,9 +151,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa572de42b0a4634196bcd43c5b9bb39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 20
+  MaxHealth: 0
+  Score: 500
   FireTimer: 30
   DespawnTimer: 0
   Dead: 0
+  Speed: 1
+  FishName: Normie
+  CatchScore: 1000
 --- !u!212 &212941551529535596
 SpriteRenderer:
   m_ObjectHideFlags: 1

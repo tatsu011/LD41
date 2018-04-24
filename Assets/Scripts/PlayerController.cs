@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public bool IsInvincible = false;
     int IVTimer = 30;
-    int IVTime;
+    int IVTime = 0;
+    public int HeldScore;
 
 
     public Vector2 MaximumSpeed = new Vector2(1.0f, 1.0f);
@@ -50,6 +51,13 @@ public class PlayerController : MonoBehaviour
     public void OnBaitCollided(GameObject other)
     {
 
+    }
+
+    void FishContact(GameObject fish)
+    {
+        transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = fish.GetComponent<SpriteRenderer>().sprite;
+        CatchOfTheDay.Instance.CaughtFish = fish.GetComponent<Fish>().FishName;
+        HeldScore = fish.GetComponent<Fish>().CatchScore;
     }
 
 

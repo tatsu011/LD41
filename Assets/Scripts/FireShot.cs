@@ -28,7 +28,18 @@ public class FireShot : MonoBehaviour {
             bullet.SetActive(true);
             bullet.transform.position = transform.position + new Vector3(0,-DownwardOffset, 0);
             bullet.GetComponent<Bullet>().DamageAmount = BulletDamage;
-            bullet.GetComponent<Bullet>().SetRay(270.0f, BulletSpeed); //testing maths.
+            bullet.GetComponent<Bullet>().SetRay(270.0f, BulletSpeed);
+            
+            AudioSource sound = GetComponent<AudioSource>();
+            if(sound.isPlaying)
+            {
+                sound.Stop();
+                sound.Play();
+            }
+            else
+            {
+                sound.Play();
+            }
         }
     }
 }
