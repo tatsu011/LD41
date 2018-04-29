@@ -37,7 +37,18 @@ public class CatchProcessing : MonoBehaviour {
         FishSpeaker.clip = AudioDictionary[CaughtFish];
         FishName.text = CaughtFish;
 	}
-	
+
+    private void Update()
+    {
+        if(CountDown == 0)
+        {
+            FishSpeaker.Play();
+        }
+        if(CountDown > 0)
+        {
+            CountDown--;
+        }
+    }
 
 
 

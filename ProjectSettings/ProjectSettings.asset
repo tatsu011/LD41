@@ -676,7 +676,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 9128eff7-6712-4162-a945-4b267c18f269
   projectName: LD41
   organizationId: tatsu011
